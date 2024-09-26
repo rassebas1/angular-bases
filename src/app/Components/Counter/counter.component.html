@@ -1,8 +1,8 @@
-<h1>Hola counter  </h1>
-<div class="container-sm ">
-
-  <h1>{{counter}}</h1>
-  <button (click)="increaseBy()" class="button">+1</button>
-  <button (click)="resetCounter()">Reset</button>
-  <button (click)="decreaseBy()" class="button">-1</button>
+<div class="d-flex container-sm flex-column justify-content-center align-items-center">
+  <h1>{{ counter }}</h1>
+  <div>
+    <button (click)="increaseBy()" class="button btn">+1</button>
+    <button (click)="resetCounter()"  class="button btn">Reset</button>
+    <button (click)="decreaseBy()"  class="button btn">-1</button>
+  </div>
 </div>
