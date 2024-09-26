@@ -1,4 +1,5 @@
-export interface IDBZCharacter{
-  name:string;
-  power:number;
+export interface IDBZCharacter {
+  uuid: string;
+  name: string;
+  power: number;
 }
