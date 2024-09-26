@@ -1,18 +1,25 @@
-<h3>Listado de Heroes</h3>
-<div *ngIf="deletedHero; else notDeleted">
-  <h3>
-    Héroe borrado
-    <small class="text-danger">
-      {{deletedHero}}
-    </small>
-  </h3>
+<div class="d-flex justify-content-center flex-column align-items-center">
+  <h3>Listado de Heroes</h3>
+  <div class="mx-auto" *ngIf="deletedHero; else notDeleted">
+    <h3 class="mx-auto">
+      Héroe borrado
+      <small class="text-danger">
+        {{ deletedHero }}
+      </small>
+    </h3>
+  </div>
+  <ng-template #notDeleted>
+    <h3 class="mx-auto">No ha borrado nada</h3>
+  </ng-template>
+  <button (click)="removeLastHero()" class="btn btn-lg btn-outline-danger">
+    Borrar ultimo Héroe
+  </button>
+  <ul class="mt-2 list-group global-list">
+    <li *ngFor="let hero of heroList" class="card mx-4">
+      <div class="card-overlay"></div>
+      <div class="card-inner">
+        {{ hero }}
+      </div>
+    </li>
+  </ul>
 </div>
-<ng-template #notDeleted>
-  <h3>No ha borrado nada</h3>
-</ng-template>
-<button (click)="removeLastHero()" class="btn btn-outline-danger">Borrar ultimo Héroe</button>
-<ul class="mt-2 list-group">
-  <li *ngFor="let hero of heroList" class="list-group-item">
-    {{hero}}
-  </li>
-</ul>

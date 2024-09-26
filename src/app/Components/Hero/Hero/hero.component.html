@@ -1,24 +1,40 @@
-<p>{{name}}</p>
-
-<dl>
-  <td>Nombre:</td>
-  <dd>{{name}}</dd>
-
-  <td>Edad:</td>
-  <dd>{{age }}</dd>
-
-  <td>Método</td>
-  <dd>{{heroDescription}}</dd>
-
-  <td>Capitalizado:</td>
-  <dd>{{capitalizedName}}</dd>
-</dl>
-<button *ngIf="this.name !== 'Spiderman'" class="btn btn-primary mx-2" (click)="setheroName('Spiderman')">
-  Cambiar Nombre
-</button>
-<button *ngIf="this.age !== 43" class="btn btn-primary mx-2" (click)="setheroAge(43)">
-  Cambiar Edad
-</button>
-<button *ngIf="!isOriginal()" class="btn btn-primary mx-2" (click)="resetForm()">
-  Reset
-</button>
+<div class="container d-flex flex-column justify-content-center align-items-center">
+  <p>{{ name }}</p>
+  <dl class="container text-center">
+    <div class="row">
+      <td class="col">Nombre:</td>
+      <td class="col">Edad:</td>
+      <td class="col">Método</td>
+      <td class="col">Capitalizado:</td>
+    </div>
+    <div class="row">
+      <dd class="col">{{ name }}</dd>
+      <dd class="col">{{ age }}</dd>
+      <dd class="col">{{ heroDescription }}</dd>
+      <dd class="col">{{ capitalizedName }}</dd>
+    </div>
+  </dl>
+  <div class="d-flex gap-2 col-6 mx-auto align-items-center justify-content-center">
+    <button
+      *ngIf="this.name !== 'Spiderman'"
+      class="btn btn-primary mx-2"
+      (click)="setheroName('Spiderman')"
+    >
+      Cambiar Nombre
+    </button>
+    <button
+      *ngIf="this.age !== 43"
+      class="btn btn-primary mx-2"
+      (click)="setheroAge(43)"
+    >
+      Cambiar Edad
+    </button>
+    <button
+      *ngIf="!isOriginal()"
+      class="btn btn-primary mx-2"
+      (click)="resetForm()"
+    >
+      Reset
+    </button>
+  </div>
+</div>
